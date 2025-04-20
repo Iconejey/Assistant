@@ -1,0 +1,27 @@
+.input {
+	position: relative;
+	display: block;
+	min-height: 1em;
+
+	&.disabled {
+		pointer-events: none;
+		user-select: none;
+		opacity: 0.5;
+	}
+
+	&[inputmode='password'],
+	&[inputmode='numeric'] {
+		-webkit-text-security: disc;
+	}
+
+	&[placeholder] {
+		&:empty::before {
+			content: attr(placeholder);
+			position: absolute;
+		}
+
+		&:focus::before {
+			opacity: 0.5;
+		}
+	}
+}
