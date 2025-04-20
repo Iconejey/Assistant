@@ -4,6 +4,7 @@
 	"description": "Meet Nono, the AI assistant for Nosuite apps !",
 	"start_url": "/",
 	"display": "standalone",
+	"display_override": ["window-controls-overlay"],
 	"background_color": "#131313",
 	"theme_color": "#131313",
 
