@@ -3,9 +3,12 @@
 @import './account-panel.scss';
 @import './text-input.scss';
 @import './side-bar.scss';
+@import './chat-area.scss';
 
 body {
 	background-color: var(--bg-2);
+	--sidebar-width: 18rem;
+	--chat-padding: 2rem;
 }
 
 main-app {
