@@ -41,9 +41,14 @@
 	outline: none;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: 'segoeui', sans-serif;
 	color: var(--txt-2);
+	height: 100%;
 }
 
 .icon {
