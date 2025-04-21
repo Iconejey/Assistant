@@ -14,7 +14,12 @@ class MainApp extends CustomElement {
 				<main>
 					<chat-area class="empty" />
 				</main>
+				<span id="menu" class="icon" title="Menu">menu</span>
 			`;
+
+			// Toggle menu on click
+			this.$('#menu').onclick = () => body_class.add('menu');
+			this.$('main').onclick = () => body_class.remove('menu');
 		});
 	}
 

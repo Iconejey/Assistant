@@ -4,4 +4,8 @@ side-bar {
 	min-width: var(--sidebar-width);
 	background-color: var(--bg-3);
 	padding: 1rem;
+	z-index: 1;
+	height: 100%;
+	max-width: 80vw;
+	transition: transform 0.3s;
 }

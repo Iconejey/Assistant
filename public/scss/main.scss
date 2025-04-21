@@ -16,14 +16,41 @@ main-app {
 	height: 100%;
 }
 
+#menu {
+	display: none;
+}
+
 // Mobile
-@media (max-width: 500px) {
+@media (max-width: 800px) {
 	body {
 		--chat-padding: 1rem;
 	}
 
-	main-app {
-		flex-direction: column;
-		align-items: stretch;
+	side-bar {
+		position: absolute;
+		transform: translateX(-100%);
+	}
+
+	body.menu {
+		side-bar {
+			transform: translateX(0%);
+		}
+
+		chat-area {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+
+	#menu {
+		position: fixed;
+		display: block;
+		top: 1rem;
+		left: 1rem;
+		font-size: 1.5rem;
+
+		&:not(:hover) {
+			color: var(--txt-3);
+		}
 	}
 }
