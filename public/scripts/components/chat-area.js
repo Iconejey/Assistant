@@ -13,7 +13,7 @@ class ChatArea extends CustomElement {
 		this.appendChild(msg);
 
 		msg.innerHTML = html`
-			<text-input placeholder="Ask me anything..." multiline />
+			<text-input placeholder="Your message..." multiline />
 			<span class="send icon" title="Send message">send</span>
 		`;
 
