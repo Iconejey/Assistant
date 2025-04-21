@@ -1,41 +1,93 @@
-chat-area {
+main {
 	flex: 1;
+	overflow-y: scroll;
+}
+
+chat-area {
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	position: relative;
+	overflow-y: auto;
 	padding: var(--chat-padding);
+	padding-top: 4rem;
+	justify-content: flex-end;
 	gap: 1rem;
 
-	#chat {
-		position: relative;
-		flex: 1;
-
-		&:empty {
-			&::before {
-				content: 'magic_button';
-				font-family: 'Material Symbols Outlined';
-				color: var(--bg-4);
-				font-size: 7rem;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-		}
+	&::before {
+		content: 'magic_button';
+		font-family: 'Material Symbols Outlined';
+		color: var(--bg-4);
+		font-size: 7rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 1;
+		transition: opacity 1s;
 	}
 
-	#user {
-		padding: 0.7rem;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
+	&:not(.empty)::before {
+		opacity: 0;
+	}
 
-		.icon {
-			font-size: 1.5rem;
+	.msg {
+		display: flex;
+		max-width: 80%;
+		min-width: fit-content;
+		box-shadow: 0 0 1rem 0rem #0002;
+		overflow: hidden;
+		transition: min-width 0.3s;
+
+		&.user {
+			background: var(--blue);
+			color: var(--bg-1);
+			border-radius: var(--radius) var(--radius) 0 var(--radius);
+			margin-left: auto;
+
+			&:last-child {
+				min-width: min(13rem, 80%);
+
+				.icon {
+					margin-right: 0rem;
+				}
+			}
 		}
 
-		text-input {
+		&.assistant {
+			background: var(--bg-4);
+			color: var(--txt-2);
+			border-radius: 0 var(--radius) var(--radius) var(--radius);
+			align-self: flex-start;
+		}
+
+		text-input,
+		span.msg-txt {
+			width: 100%;
+			min-width: 2rem;
+			padding: 0.6em 0.7rem;
 			flex: 1;
+			white-space: pre-line;
+
+			.chunk {
+				color: var(--txt-3);
+			}
+		}
+
+		.icon {
+			width: 2.7rem;
+			background: #0002;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5em;
+			cursor: pointer;
+			margin-right: -2.7rem;
+			transition: margin-right 0.3s;
+
+			&:not(:hover) {
+				opacity: 0.8;
+			}
 		}
 	}
 }

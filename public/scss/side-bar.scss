@@ -1,7 +1,7 @@
 side-bar {
 	display: flex;
 	flex-direction: column;
-	width: var(--sidebar-width);
+	min-width: var(--sidebar-width);
 	background-color: var(--bg-3);
 	padding: 1rem;
 }

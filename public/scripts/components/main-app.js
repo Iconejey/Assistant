@@ -11,7 +11,9 @@ class MainApp extends CustomElement {
 			// Set the inner HTML
 			this.innerHTML = html`
 				<side-bar />
-				<chat-area />
+				<main>
+					<chat-area class="empty" />
+				</main>
 			`;
 		});
 	}
